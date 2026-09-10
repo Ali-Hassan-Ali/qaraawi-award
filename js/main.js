@@ -2,16 +2,6 @@
 (function () {
   "use strict";
 
-  /* ---------- شريط التنقل عند التمرير ---------- */
-  var header = document.getElementById("siteHeader");
-  function onScroll() {
-    if (!header) return;
-    if (window.scrollY > 12) header.classList.add("is-scrolled");
-    else header.classList.remove("is-scrolled");
-  }
-  document.addEventListener("scroll", onScroll, { passive: true });
-  onScroll();
-
   /* ---------- قائمة الجوال ---------- */
   var navToggle = document.getElementById("navToggle");
   var navLinks = document.getElementById("navLinks");
@@ -49,36 +39,14 @@
     revealEls.forEach(function (el) { el.classList.add("is-visible"); });
   }
 
-  /* ---------- العداد التنازلي لإغلاق التقديم ----------
-     ملاحظة: التاريخ المستهدف أدناه (data-target على #countdown) قيمة مبدئية
-     إلى حين تحديد الموعد النهائي الفعلي لإغلاق باب الترشح. */
-  var countdown = document.getElementById("countdown");
-  if (countdown) {
-    var target = new Date(countdown.getAttribute("data-target")).getTime();
-    var dEl = countdown.querySelector('[data-cd="days"]');
-    var hEl = countdown.querySelector('[data-cd="hours"]');
-    var mEl = countdown.querySelector('[data-cd="minutes"]');
-    var sEl = countdown.querySelector('[data-cd="seconds"]');
-
-    function pad(n) { return String(n).padStart(2, "0"); }
-
-    function tick() {
-      var now = Date.now();
-      var diff = target - now;
-      if (diff <= 0) {
-        dEl.textContent = hEl.textContent = mEl.textContent = sEl.textContent = "00";
-        return;
-      }
-      var days = Math.floor(diff / 86400000);
-      var hours = Math.floor((diff % 86400000) / 3600000);
-      var minutes = Math.floor((diff % 3600000) / 60000);
-      var seconds = Math.floor((diff % 60000) / 1000);
-      dEl.textContent = pad(days);
-      hEl.textContent = pad(hours);
-      mEl.textContent = pad(minutes);
-      sEl.textContent = pad(seconds);
-    }
-    tick();
-    setInterval(tick, 1000);
+  /* ---------- الاشتراك في النشرة البريدية ---------- */
+  var newsletterForm = document.getElementById("newsletterForm");
+  if (newsletterForm) {
+    newsletterForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var msg = document.getElementById("newsletterMsg");
+      if (msg) msg.classList.add("is-visible");
+      newsletterForm.reset();
+    });
   }
 })();
