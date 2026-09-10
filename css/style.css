@@ -207,11 +207,11 @@ input{ font-family: inherit; font-size: 16px; }
   background: var(--c-teal);
   border-radius: var(--radius-lg);
   padding: 26px 40px;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 18px;
   box-shadow: var(--shadow-md);
-  align-self: flex-end;
+  margin-top: 36px;
 }
 .hero-prize-card img{ width: 56px; height: auto; flex: none; }
 .hero-prize-card strong{ display: block; font-size: 19px; font-weight: 800; color: #fff; margin-bottom: 4px; }
