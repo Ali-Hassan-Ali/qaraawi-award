@@ -1,0 +1,125 @@
+/* =========================================================
+   النسخة الثانية — إضافات فقط فوق style.css (بطل بصورة حقيقية
+   + قسم الشعار "العلم بداية كل إنجاز")
+   ========================================================= */
+
+/* ---------- الشريط العلوي فوق الصورة (قبل التمرير) ---------- */
+.brand-logo-wrap{ position: relative; display: inline-block; height: 46px; flex: none; }
+.is-scrolled .brand-logo-wrap{ height: 38px; }
+.brand-logo{ height: 100%; width: auto; display: block; }
+.brand-logo--color{ display: block; }
+.brand-logo--white{ display: none; }
+
+.v2-page .brand-logo--white{ display: block; }
+.v2-page .brand-logo--color{ display: none; }
+.v2-page .site-header.is-scrolled .brand-logo--white{ display: none; }
+.v2-page .site-header.is-scrolled .brand-logo--color{ display: block; }
+
+.v2-page .site-header:not(.is-scrolled) .brand-text strong{ color: #fff; }
+.v2-page .site-header:not(.is-scrolled) .brand-text span{ color: rgba(255,255,255,.75); }
+.v2-page .site-header:not(.is-scrolled) .nav-links a{ color: rgba(255,255,255,.88); }
+.v2-page .site-header:not(.is-scrolled) .nav-links a:hover{ color: #fff; }
+.v2-page .site-header:not(.is-scrolled) .nav-toggle{ background: rgba(255,255,255,.12); border-color: rgba(255,255,255,.3); }
+.v2-page .site-header:not(.is-scrolled) .nav-toggle span{ background: #fff; }
+@media (max-width: 960px){
+  .v2-page .site-header:not(.is-scrolled) .nav-links{ background: var(--c-ink); }
+  .v2-page .site-header:not(.is-scrolled) .nav-links a:hover{ background: rgba(255,255,255,.08); }
+}
+
+/* ---------- بطل بصورة المسجد ---------- */
+.hero--photo{
+  position: relative;
+  padding: 190px 0 110px;
+  overflow: hidden;
+  background: var(--c-dark-bg);
+}
+.hero--photo::before{
+  content: "";
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  border-radius: 0;
+  background-image: url("../assets/img/v2/mosque-hero.jpg");
+  background-size: cover;
+  background-position: center 35%;
+  transform: scale(1.02);
+}
+.hero--photo::after{
+  content: "";
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(180deg, rgba(23,48,58,.25) 0%, rgba(23,48,58,.5) 60%, rgba(23,48,58,.78) 100%),
+    linear-gradient(100deg, rgba(23,48,58,.72) 0%, rgba(23,48,58,.22) 55%, rgba(23,48,58,.08) 100%);
+}
+.hero--photo .hero-grid{ position: relative; z-index: 1; }
+.hero--photo .eyebrow{ background: rgba(255,255,255,.14); color: var(--c-gold-light); }
+.hero--photo .eyebrow::before{ background: var(--c-gold-light); }
+.hero--photo .hero-title{ color: #fff; }
+.hero--photo .hero-sub{ color: rgba(255,255,255,.82); }
+.hero--photo .hero-sub b{ color: #fff; }
+.hero--photo .hero-countdown-label{ color: rgba(255,255,255,.75); }
+.hero--photo .cd-box{
+  background: rgba(255,255,255,.08);
+  border-color: rgba(255,255,255,.2);
+  backdrop-filter: blur(6px);
+}
+.hero--photo .cd-box strong{ color: #fff; }
+.hero--photo .cd-box span{ color: rgba(255,255,255,.7); }
+.hero--photo .btn--outline{ border-color: rgba(255,255,255,.4); color: #fff; }
+.hero--photo .btn--outline:hover{ border-color: #fff; background: rgba(255,255,255,.1); }
+
+/* بطاقة الجائزة الزجاجية */
+.hero-art-card--glass{
+  background: linear-gradient(165deg, rgba(57,101,117,.55) 0%, rgba(23,48,58,.7) 100%);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,.18);
+}
+.hero-prize-icon{ width: 64px; margin: 0 auto 10px; mix-blend-mode: screen; }
+
+/* ---------- قسم الشعار: العلم بداية كل إنجاز ---------- */
+.statement{
+  background: var(--c-ink);
+  padding: 96px 0;
+}
+.statement-grid{
+  display: grid;
+  grid-template-columns: minmax(0,1fr) minmax(0,.62fr);
+  gap: 64px;
+  align-items: center;
+}
+.statement-copy .eyebrow{ background: rgba(255,255,255,.1); color: var(--c-gold-light); }
+.statement-copy .eyebrow::before{ background: var(--c-gold-light); }
+.statement-quote{
+  font-size: clamp(30px, 4vw, 46px);
+  font-weight: 700;
+  line-height: 1.5;
+  color: #fff;
+  margin-bottom: 20px;
+}
+.statement-quote span{ color: var(--c-gold-light); }
+.statement-copy p{
+  font-size: 15.5px;
+  color: rgba(255,255,255,.68);
+  max-width: 480px;
+}
+.statement-figure{
+  display: flex;
+  justify-content: center;
+}
+.arch-frame{
+  width: 100%;
+  max-width: 300px;
+  aspect-ratio: 3 / 4.2;
+  overflow: hidden;
+  border-top-left-radius: 160px;
+  border-top-right-radius: 160px;
+  border: 6px solid rgba(255,255,255,.1);
+  box-shadow: var(--shadow-lg);
+}
+.arch-frame img{ width: 100%; height: 100%; object-fit: cover; }
+
+@media (max-width: 860px){
+  .statement-grid{ grid-template-columns: 1fr; }
+  .statement-figure{ order: -1; }
+  .arch-frame{ max-width: 220px; margin-inline: auto; }
+}
+

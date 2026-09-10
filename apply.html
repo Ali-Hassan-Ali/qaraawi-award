@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>بوابة التقديم — جائزة الشيخ إبراهيم بن عثمان القرعاوي</title>
+<meta name="description" content="بوابة التقديم الإلكترونية لجائزة الشيخ إبراهيم بن عثمان بن محمد القرعاوي رحمه الله للتفوق العلمي والمهني.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" type="image/png" href="assets/img/logo.png">
+</head>
+<body>
+
+<!-- ===================== الشريط العلوي ===================== -->
+<div class="top-fixed-wrap">
+  <header class="site-header is-scrolled" id="siteHeader">
+    <div class="container">
+      <a href="index.html" class="brand">
+        <img src="assets/img/logo.png" alt="شعار جائزة الشيخ إبراهيم بن عثمان القرعاوي">
+        <span class="brand-text">
+          <strong>جائزة الشيخ القرعاوي</strong>
+          <span>للتفوق العلمي والمهني</span>
+        </span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html#top">الرئيسية</a>
+        <a href="index.html#about">عن الجائزة</a>
+        <a href="index.html#tracks">مسارات الجائزة</a>
+        <a href="index.html#conditions">الشروط والمواعيد</a>
+        <a href="index.html#footer">اتصل بنا</a>
+      </nav>
+      <div class="header-actions">
+        <button class="nav-toggle" id="navToggle" aria-label="فتح القائمة" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+</div>
+
+<main>
+  <section class="portal-header">
+    <div class="container">
+      <span class="eyebrow">بوابة التقديم</span>
+      <h1 class="section-title" style="margin-bottom:6px;">قدّم ترشيحك للجائزة</h1>
+      <p class="section-desc">أكمل الخطوات الأربع التالية لإرسال طلب ترشحك إلكترونيًا.</p>
+    </div>
+  </section>
+
+  <section class="portal-shell">
+    <div class="container">
+
+      <!-- شريط الخطوات -->
+      <div class="stepper" id="stepper">
+        <div class="step-pill is-active" data-step-indicator="1">
+          <span class="dot">1</span><span class="label">إنشاء حساب</span><span class="line"></span>
+        </div>
+        <div class="step-pill" data-step-indicator="2">
+          <span class="dot">2</span><span class="label">اختيار المسار</span><span class="line"></span>
+        </div>
+        <div class="step-pill" data-step-indicator="3">
+          <span class="dot">3</span><span class="label">رفع المستندات</span><span class="line"></span>
+        </div>
+        <div class="step-pill" data-step-indicator="4">
+          <span class="dot">4</span><span class="label">مراجعة وإرسال</span>
+        </div>
+      </div>
+
+      <form class="portal-card" id="portalForm" novalidate>
+
+        <!-- ============ الخطوة 1: إنشاء حساب ============ -->
+        <div class="portal-step is-active" data-step="1">
+          <h2>إنشاء حساب</h2>
+          <p class="step-desc">أدخل رقم الهوية الوطنية لإرسال رمز تحقق عبر رسالة نصية.</p>
+
+          <div class="field" id="fieldNationalId">
+            <label for="nationalId">رقم الهوية الوطنية</label>
+            <input type="text" id="nationalId" inputmode="numeric" maxlength="10" placeholder="1XXXXXXXXX" dir="ltr">
+            <p class="field-error">يرجى إدخال رقم هوية صحيح مكوّن من 10 أرقام.</p>
+          </div>
+
+          <div class="otp-row">
+            <div class="field" id="fieldOtp">
+              <label for="otp">رمز التحقق</label>
+              <input type="text" id="otp" inputmode="numeric" maxlength="6" placeholder="------" dir="ltr">
+              <p class="field-error">يرجى إدخال رمز التحقق المرسل إليك.</p>
+            </div>
+            <button type="button" class="btn btn--outline btn--sm" id="sendOtpBtn" style="margin-bottom:20px;">إرسال الرمز</button>
+          </div>
+          <p class="field-hint" id="otpStatus"></p>
+        </div>
+
+        <!-- ============ الخطوة 2: اختيار المسار ============ -->
+        <div class="portal-step" data-step="2">
+          <h2>اختيار المسار</h2>
+          <p class="step-desc">اختر مسار الجائزة الأقرب لإنجازك.</p>
+
+          <div class="track-select-grid" id="trackSelectGrid">
+            <label class="track-option" style="--accent:#389387">
+              <input type="radio" name="track" value="القرآن الكريم">
+              <span class="track-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5C6 4.2 9 4 12 5v14c-3-1-6-.8-8 .5V5.5Z"/><path d="M20 5.5C18 4.2 15 4 12 5v14c3-1 6-.8 8 .5V5.5Z"/></svg></span>
+              <strong>القرآن الكريم</strong>
+              <span>حفظ وتلاوة وتفسير</span>
+            </label>
+            <label class="track-option" style="--accent:#924a22">
+              <input type="radio" name="track" value="السنة النبوية">
+              <span class="track-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3c-1.7 1.2-2.5 2.7-2.5 4.5S5.3 10.8 7 12"/><rect x="7" y="4" width="12" height="16" rx="2"/><path d="M11 9h5M11 13h5"/></svg></span>
+              <strong>السنة النبوية</strong>
+              <span>الحفظ والعلوم الحديثية</span>
+            </label>
+            <label class="track-option" style="--accent:#bd9864">
+              <input type="radio" name="track" value="التفوق الدراسي">
+              <span class="track-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9 12 4l10 5-10 5-10-5Z"/><path d="M6 11.5V16c0 1.7 2.7 3 6 3s6-1.3 6-3v-4.5"/><path d="M22 9v6"/></svg></span>
+              <strong>التفوق الدراسي</strong>
+              <span>التفوق الأكاديمي والجامعي</span>
+            </label>
+            <label class="track-option" style="--accent:#4e6865">
+              <input type="radio" name="track" value="الإبداع العلمي">
+              <span class="track-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-4 10.5c.6.6 1 1.4 1 2.5h6c0-1.1.4-1.9 1-2.5A6 6 0 0 0 12 3Z"/></svg></span>
+              <strong>الإبداع العلمي</strong>
+              <span>الابتكارات والبحوث والعلماء</span>
+            </label>
+            <label class="track-option" style="--accent:#7e8772">
+              <input type="radio" name="track" value="الخدمة المجتمعية">
+              <span class="track-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-9.5-9C.7 8.4 2.4 5 6 5c2 0 3.3 1 4 2 .7-1 2-2 4-2 3.6 0 5.3 3.4 3.5 7-2.5 4.5-9.5 9-9.5 9Z"/></svg></span>
+              <strong>الخدمة المجتمعية</strong>
+              <span>المبادرات والأعمال المجتمعية</span>
+            </label>
+          </div>
+          <p class="field-error" id="trackError">يرجى اختيار مسار واحد للمتابعة.</p>
+        </div>
+
+        <!-- ============ الخطوة 3: رفع المستندات ============ -->
+        <div class="portal-step" data-step="3">
+          <h2>رفع المستندات</h2>
+          <p class="step-desc">أرفق المستندات التي تثبت إنجازك في المسار المختار.</p>
+
+          <ul class="doc-required-list">
+            <li>صورة من الهوية الوطنية سارية المفعول.</li>
+            <li>ما يثبت الإنجاز (شهادات، خطابات شكر، تقارير، أبحاث منشورة... إلخ).</li>
+            <li>السيرة الذاتية محدثة (اختياري).</li>
+          </ul>
+
+          <div class="upload-box" id="uploadBox">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V4M8 8l4-4 4 4"/><path d="M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg>
+            <strong>اسحب الملفات هنا أو اضغط للاختيار</strong>
+            <span>PDF, JPG, PNG — بحد أقصى 10 ميغابايت لكل ملف</span>
+            <input type="file" id="fileInput" multiple hidden accept=".pdf,.jpg,.jpeg,.png">
+          </div>
+          <ul class="upload-list" id="uploadList"></ul>
+          <p class="field-error" id="uploadError">يرجى إرفاق مستند واحد على الأقل للمتابعة.</p>
+        </div>
+
+        <!-- ============ الخطوة 4: مراجعة وإرسال ============ -->
+        <div class="portal-step" data-step="4">
+          <h2>مراجعة وإرسال</h2>
+          <p class="step-desc">تأكد من صحة بياناتك قبل إرسال الطلب نهائيًا.</p>
+
+          <div class="review-block">
+            <h4>بيانات الحساب</h4>
+            <div class="review-row"><span>رقم الهوية الوطنية</span><strong id="reviewNationalId">—</strong></div>
+          </div>
+          <div class="review-block">
+            <h4>المسار المختار</h4>
+            <div class="review-row"><span>مسار الجائزة</span><strong id="reviewTrack">—</strong></div>
+          </div>
+          <div class="review-block">
+            <h4>المستندات المرفقة</h4>
+            <div class="review-row"><span>عدد الملفات</span><strong id="reviewFiles">0</strong></div>
+          </div>
+
+          <!-- حالة النجاح بعد الإرسال -->
+          <div class="success-state" id="successState" hidden>
+            <div class="success-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            </div>
+            <h2>تم إرسال طلبك بنجاح</h2>
+            <p class="step-desc">احتفظ برقم المتابعة التالي لمراجعة حالة طلبك لاحقًا.</p>
+            <div class="tracking-box">
+              <span id="trackingNumber">QA-2026-000000</span>
+              <button type="button" id="copyTrackingBtn">نسخ</button>
+            </div>
+            <div>
+              <a href="index.html" class="btn btn--outline">العودة إلى الرئيسية</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============ أزرار التنقل ============ -->
+        <div class="portal-nav" id="portalNav">
+          <button type="button" class="btn btn--outline" id="prevBtn" disabled>السابق</button>
+          <button type="button" class="btn btn--teal" id="nextBtn">التالي</button>
+          <button type="submit" class="btn btn--gold" id="submitBtn" hidden>إرسال الطلب</button>
+        </div>
+
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <svg class="footer-pattern" viewBox="0 0 800 34" preserveAspectRatio="none" aria-hidden="true">
+    <g fill="none" stroke="#e0912a" stroke-width="1">
+      <path d="M0 30 L20 8 L40 30 L60 8 L80 30 L100 8 L120 30 L140 8 L160 30 L180 8 L200 30 L220 8 L240 30 L260 8 L280 30 L300 8 L320 30 L340 8 L360 30 L380 8 L400 30 L420 8 L440 30 L460 8 L480 30 L500 8 L520 30 L540 8 L560 30 L580 8 L600 30 L620 8 L640 30 L660 8 L680 30 L700 8 L720 30 L740 8 L760 30 L780 8 L800 30"/>
+    </g>
+  </svg>
+  <div class="container footer-bottom">
+    <span>© 2026 جائزة الشيخ إبراهيم بن عثمان القرعاوي. جميع الحقوق محفوظة.</span>
+    <span>info@qaraawi-award.sa | 0555804474</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/apply.js"></script>
+</body>
+</html>
