@@ -231,7 +231,7 @@ input{ font-family: inherit; font-size: 16px; }
   background-size: cover;
   background-position: center;
   overflow: hidden;
-  border: 2px solid rgba(255,255,255,.7);
+  border: 3px solid #eeeadf;
 }
 .track-card::before{
   content: "";
